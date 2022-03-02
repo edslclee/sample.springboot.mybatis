@@ -31,13 +31,13 @@ public class UserProfileController {
 		return mapper.getUserProfileList();
 	}
 	
-	@PutMapping("/user/{id}")
-	public void putUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address) {
+	@PostMapping("/user/{id}")
+	public void postUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address) {
 		mapper.insertUserProfile(id, name, phone, address);
 	}
 	
-	@PostMapping("/user/{id}")
-	public void postUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address) {
+	@PutMapping("/user/{id}")
+	public void putUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address) {
 		mapper.updateUserProfile(id, name, phone, address);
 	}
 	
